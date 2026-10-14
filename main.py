@@ -45,14 +45,17 @@ def main():
             if palavra.isalpha():
                 palavras_processadas.append(palavra.lower())
 
-    print("jahajhaj")
-    print(palavras_processadas)
-    mostrarGraficos(palavras_processadas, 16, 3)
+    mostrarGraficos(alunos, 26, 1)
+
+    mostrarGraficos(alunos, 26, 2)
+
     mostrarGraficos(palavras_processadas, 17, 3)
-    mostrarGraficos(palavras_processadas, 40, 3)
     mostrarGraficos(palavras_processadas, 43, 3)
-    mostrarGraficos(palavras_processadas, 100, 3)
     mostrarGraficos(palavras_processadas, 97, 3)
+
+    mostrarGraficos(palavras_processadas, 16, 3)
+    mostrarGraficos(palavras_processadas, 40, 3)
+    mostrarGraficos(palavras_processadas, 100, 3)
 
 
     #arquivoClaraDosAnjos = "clara-dos-anjos.txt"
