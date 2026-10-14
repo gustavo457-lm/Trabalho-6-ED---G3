@@ -1,7 +1,7 @@
 from Node import Node
 
 class HashTable:
-    def __init__(self, M=26):
+    def __init__(self, M):
         self.M = M
         self.N = 0
         self.table = [None]*M
@@ -9,8 +9,7 @@ class HashTable:
 
     def hashFirstL(self, key):
         h = 0
-        for c in key[0]:
-            h = (31*h + ord(c)) % self.M
+        h = ord(key[0]) - ord('A')
         return h
 
     def hash_nativo(self, key):
