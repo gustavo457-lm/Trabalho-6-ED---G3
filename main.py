@@ -2,11 +2,6 @@ import HashTable as ht
 import re
 import matplotlib.pyplot as plt
 
-def ler_arquivo(nome):
-    with open(nome, 'r', encoding='utf-8') as arquivo:
-        texto = arquivo.read().lower
-    return texto
-
 def mostrarGraficos(palavras, M, idx_hash):
     letras = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
     tabela = ht.HashTable(M)
@@ -29,8 +24,6 @@ def mostrarGraficos(palavras, M, idx_hash):
 
 
 def main():
-
-    letras = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
     with open('alunosED_2026.txt', 'r', encoding="UTF-8") as arquivo_alunos:
         alunos = arquivo_alunos.readlines()
 
@@ -49,7 +42,6 @@ def main():
                     palavras_processadas.append(palavra.lower())
 
 
-
     mostrarGraficos(alunos, 26, 1)
 
     mostrarGraficos(alunos, 26, 2)
@@ -61,8 +53,6 @@ def main():
     mostrarGraficos(palavras_processadas, 16, 3)
     mostrarGraficos(palavras_processadas, 40, 3)
     mostrarGraficos(palavras_processadas, 100, 3)
-
-
 
 
 if __name__ == "__main__":
