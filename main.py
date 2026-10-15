@@ -8,8 +8,6 @@ def ler_arquivo(nome):
     return texto
 
 def mostrarGraficos(palavras, M, idx_hash):
-    #arquivoClaraDosAnjos = "clara-dos-anjos.txt"
-    #textoClaraDosAnjos = ler_arquivo(arquivoClaraDosAnjos)
     letras = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
     tabela = ht.HashTable(M)
 
@@ -35,20 +33,27 @@ def main():
     letras = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
     with open('alunosED_2026.txt', 'r', encoding="UTF-8") as arquivo_alunos:
         alunos = arquivo_alunos.readlines()
-    #arquivoAlunos = "alunosED_2026.txt"
-    #textoAlunos = ler_arquivo(arquivoAlunos)    
+
     with open('clara-dos-anjos.txt', 'r', encoding= 'UTF-8') as arquivo:
         texto = arquivo.read()
         palavras = re.split(r'[.,;:!?\d+\s/+-]', texto)
         palavras_processadas = []
         for palavra in palavras:
+            repetida = 0 #booleano para saber se a palavra é repetida ou não
             if palavra.isalpha():
-                palavras_processadas.append(palavra.lower())
+                for palavraIncluida in palavras_processadas: #checagem se a palavra inserida é repetida ou não 
+                    if palavraIncluida == palavra.lower():
+                        repetida = 1
+                        break
+                if repetida == 0:
+                    palavras_processadas.append(palavra.lower())
+
+
 
     mostrarGraficos(alunos, 26, 1)
 
     mostrarGraficos(alunos, 26, 2)
-
+    
     mostrarGraficos(palavras_processadas, 17, 3)
     mostrarGraficos(palavras_processadas, 43, 3)
     mostrarGraficos(palavras_processadas, 97, 3)
@@ -57,9 +62,6 @@ def main():
     mostrarGraficos(palavras_processadas, 40, 3)
     mostrarGraficos(palavras_processadas, 100, 3)
 
-
-    #arquivoClaraDosAnjos = "clara-dos-anjos.txt"
-    #textoClaraDosAnjos = ler_arquivo(arquivoClaraDosAnjos)
 
 
 
