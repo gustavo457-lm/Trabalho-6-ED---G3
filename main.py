@@ -2,7 +2,7 @@ import HashTable as ht
 import re
 import matplotlib.pyplot as plt
 
-def mostrarGraficos(palavras, M, idx_hash):
+def mostrarGraficos(palavras, M, idx_hash, titulo):
     letras = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
     tabela = ht.HashTable(M)
 
@@ -16,9 +16,9 @@ def mostrarGraficos(palavras, M, idx_hash):
 
     plt.xlabel("Índice da tabela hash")
     plt.ylabel("Quantidade de palavras")
-    plt.title("Distribuição da função hash")
+    plt.title(titulo)
     plt.axhline(tabela.N/tabela.M, 0, 100)
-    if idx_hash == 1:
+    if idx_hash != 3:
         plt.xticks(range(len(letras)), letras)
     plt.show()
 
@@ -42,17 +42,17 @@ def main():
                     palavras_processadas.append(palavra.lower())
 
 
-    mostrarGraficos(alunos, 26, 1)
+    mostrarGraficos(alunos, 26, 1, "Alunos, primeira letra do nome, M = 26")
 
-    mostrarGraficos(alunos, 26, 2)
+    mostrarGraficos(alunos, 26, 2, "Alunos, hash nativo, M = 26")
     
-    mostrarGraficos(palavras_processadas, 17, 3)
-    mostrarGraficos(palavras_processadas, 43, 3)
-    mostrarGraficos(palavras_processadas, 97, 3)
+    mostrarGraficos(palavras_processadas, 17, 3, "Clara dos anjos, função exemplo, M = 17")
+    mostrarGraficos(palavras_processadas, 43, 3, "Clara dos anjos, função exemplo, M = 43")
+    mostrarGraficos(palavras_processadas, 97, 3, "Clara dos anjos, função exemplo, M = 97")
 
-    mostrarGraficos(palavras_processadas, 16, 3)
-    mostrarGraficos(palavras_processadas, 40, 3)
-    mostrarGraficos(palavras_processadas, 100, 3)
+    mostrarGraficos(palavras_processadas, 16, 3, "Clara dos anjos, função exemplo, M = 16")
+    mostrarGraficos(palavras_processadas, 40, 3, "Clara dos anjos, função exemplo, M = 40")
+    mostrarGraficos(palavras_processadas, 100, 3, "Clara dos anjos, função exemplo, M = 100")
 
 
 if __name__ == "__main__":
