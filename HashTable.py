@@ -9,7 +9,7 @@ class HashTable:
 
     def hashFirstL(self, key):
         h = 0
-        h = ord(key[0]) - ord('A')
+        h = (ord(key[0]) - ord('a')) % self.M
         return h
 
     def hash_nativo(self, key):

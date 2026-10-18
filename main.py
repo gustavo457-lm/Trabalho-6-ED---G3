@@ -25,8 +25,9 @@ def mostrarGraficos(palavras, M, idx_hash, titulo):
 
 def main():
     with open('alunosED_2026.txt', 'r', encoding="UTF-8") as arquivo_alunos:
-        alunos = arquivo_alunos.readlines()
-
+        alunos = []
+        for linha in arquivo_alunos:
+            alunos.append(linha.lower())
     with open('clara-dos-anjos.txt', 'r', encoding= 'UTF-8') as arquivo:
         texto = arquivo.read()
         palavras = re.split(r'[.,;:!?\d+\s/+-]', texto)
@@ -41,7 +42,7 @@ def main():
                 if repetida == 0:
                     palavras_processadas.append(palavra.lower())
 
-
+    print(alunos)
     mostrarGraficos(alunos, 26, 1, "Alunos, primeira letra do nome, M = 26")
 
     mostrarGraficos(alunos, 26, 2, "Alunos, hash nativo, M = 26")
