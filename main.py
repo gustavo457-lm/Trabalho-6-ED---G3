@@ -8,9 +8,10 @@ def mostrarGraficos(palavras, M, idx_hash, titulo):
 
     for palavra in palavras:
         tabela.insert(palavra, idx_hash)
+    print(titulo)
 
-    for quant in tabela.quant:
-        print(quant)
+    for i, quant in enumerate(tabela.quant):
+        print(f"índice {i}: {quant}")
 
     plt.bar(range(tabela.M), tabela.quant)
 
