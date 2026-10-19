@@ -8,8 +8,9 @@ def mostrarGraficos(palavras, M, idx_hash, titulo):
 
     for palavra in palavras:
         tabela.insert(palavra, idx_hash)
+    print("-" * 20)
     print(titulo)
-
+    print("-" * 20)
     for i, quant in enumerate(tabela.quant):
         print(f"índice {i}: {quant}")
 
