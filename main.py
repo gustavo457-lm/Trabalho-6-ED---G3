@@ -28,6 +28,7 @@ def main():
         alunos = []
         for linha in arquivo_alunos:
             alunos.append(linha.lower())
+
     with open('clara-dos-anjos.txt', 'r', encoding= 'UTF-8') as arquivo:
         texto = arquivo.read()
         palavras = re.split(r'[.,;:!?\d+\s/+-]', texto)
@@ -42,7 +43,13 @@ def main():
                 if repetida == 0:
                     palavras_processadas.append(palavra.lower())
 
-    print(alunos)
+
+    '''
+    idx_hash == 1: hashFirstL
+    idx_hash == 2: hashNativo
+    idx_hash == 3: _hash, exemplo em sala de aula
+    '''
+
     mostrarGraficos(alunos, 26, 1, "Alunos, primeira letra do nome, M = 26")
 
     mostrarGraficos(alunos, 26, 2, "Alunos, hash nativo, M = 26")
